@@ -2,3 +2,4 @@ output.md
 node_modules
 yarn-error.log
 .env
+.vscode/
