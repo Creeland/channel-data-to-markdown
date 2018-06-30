@@ -6,7 +6,7 @@ const json2md = require('json2md')
 const moment = require('moment')
 var Input = require('prompt-input');
 
-const file = './output.md'
+const file = './output/output.md'
 
 const getChannel = (channel) => {
   try {
@@ -22,6 +22,7 @@ const getChannelId = (channel) => {
     getVideos(id).then(response => {
       formattedVideos = map(response.data.items, video => {
         const {title, description, publishedAt} = video.snippet
+        
         return json2md([
           {p: `**${title}**`},
           {ul: [
